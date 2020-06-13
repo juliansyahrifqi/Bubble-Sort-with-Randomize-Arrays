@@ -27,11 +27,17 @@ public class BubbleSort {
     }
     
     public static void main(String[] args) {
-        int[] arr = randomize(20);
-    
+      
+        // Randomize array
+        int[] arr = randomize(5);
+        
+        // Time start execute
+        double t1 = System.currentTimeMillis();
+        
         System.out.println("Unsorted");
         System.out.println(Arrays.toString(arr) + "\n");
-        
+
+        // Bubble Sort Algorithm
         for(int i = 0; i < arr.length - 1; i++) {
             for(int j = 0; j < arr.length - 1; j++) {
                 if(arr[j] > arr[j+1]) {
@@ -41,7 +47,16 @@ public class BubbleSort {
                 }
             }
         }
+        
+        // Execute end time
+        double t2 = System.currentTimeMillis();
+        
+        // Execute Duration
+        double duration = (t2 - t1) / 1000;
+        
         System.out.println("Sorted");
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr) + "\n");
+        
+        System.out.println("Sorting time : " + duration + " s");
     }   
 }
